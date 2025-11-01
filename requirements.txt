@@ -1,0 +1,9 @@
+Flask
+Flask-Session
+google-generative-ai
+PyPDF2
+nltk
+pdf2image
+Pillow
+pytesseract
+gunicorn

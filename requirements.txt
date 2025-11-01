@@ -1,6 +1,6 @@
 Flask
 Flask-Session
-google-generative-ai
+google-generativeai
 PyPDF2
 nltk
 pdf2image

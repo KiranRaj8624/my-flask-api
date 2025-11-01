@@ -22,10 +22,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 6. Copy the rest of your app's code
 COPY . .
 
-# 7. Expose the port the app will run on (set by Cloud Run)
+# 7. Expose the port the app will run on (Render will set this)
 ENV PORT 8080
 
-# 8. Define the command to run the app
-# We use Gunicorn, a production-ready web server
-# It will run the 'app' object from the 'chat_with_pdf_v1' file
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "chat_with_pdf_v1:app"]
+# 8. Define the command to run the app (THE FIX IS HERE)
+# We use "shell" form (no brackets) so $PORT is correctly read
+CMD gunicorn --bind 0.0.0.0:$PORT chat_with_pdf_v1:app
+
